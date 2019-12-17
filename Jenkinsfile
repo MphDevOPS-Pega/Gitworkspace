@@ -21,11 +21,11 @@ pipeline {
 			description: 'The Version of the RAP used to generate the archive.', 
 			name: 'productVersion')
 			
-		choice(choices: "<URL>", 
+		choice(choices: "http://srvawsbpmldbvm1:8090/", 
 			description: 'URL of Source Host', 
 			name: 'SourceHost')
 			
-		choice(choices: "<URL>", 
+		choice(choices: "http://srvawsbpmlwbvm1:8080", 
 			description: 'URL of Target Host', 
 			name: 'TargetHost')		
 	}
