@@ -31,7 +31,7 @@ pipeline {
 	}
 
 	//Stages of Pipeline
-	stages {
+	/*stages {
 
 		stage ('Cleanup'){
 			steps {
@@ -60,7 +60,7 @@ pipeline {
 			}
 		}
 
-		/*
+		
 		Stage 2: Automated Unit Testing:
 		This stage is executed if the test_suite_id parameter is provided or else this stage is skipped
 		1. Calls the REST API to execute the Unit Test Suite
