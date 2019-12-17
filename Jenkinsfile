@@ -38,25 +38,28 @@ pipeline {
 
 		stage('Deploy to L2') {
 			steps {
-                           load "${WORKSPACE}/loadprop.properties"
-				
-				sh 'rm -rf ${WORKSPACE}/tmp'
-				sh 'mkdir ${WORKSPACE}/tmp'
-				sh "cp ${WORKSPACE}/scripts/samples/jenkins/Jenkins-build.xml ${WORKSPACE}/build.xml"
-				
-				withAnt(installation: 'Ant_1.10', jdk: 'JAVA_8') {
-					sh "ant exportprops"
-					sh "${WORKSPACE}/scripts/utils/prpcServiceUtils.sh export --connPropFile ${WORKSPACE}/scripts/utils/${SystemName}_export.properties --artifactsDir $WORKSPACE"
+				bat label: '', script: 'echo "00"'
+				load "loadprop.properties"
+				bat 'echo "0"'
+				bat 'del %WORKSPACE%\\tmp /s /f /q'
+				bat 'echo "1"'
+				bat 'mkdir %WORKSPACE%\\tmp'
+				bat 'echo "2"'
+				bat "copy %WORKSPACE%\\scripts\\samples\\jenkins\\Jenkins-build.xml %WORKSPACE%\\build.xml"
+				bat 'echo "3"'
+				withAnt(installation: 'Ant') {
+					bat "ant exportprops"
+					bat "%WORKSPACE%\\scripts\\utils\\prpcServiceUtils.bat export --connPropFile %WORKSPACE%\\scripts\\utils\\%SystemName%_export.properties "
 				}
-				withAnt(installation: 'Ant_1.10', jdk: 'JAVA_8') {
-					sh "ant importprops"
-					sh "${WORKSPACE}/scripts/utils/prpcServiceUtils.sh import --connPropFile ${WORKSPACE}/scripts/utils/${SystemName}_import.properties --artifactsDir $WORKSPACE"
-				}
-				
-				
-				
-				
-			}
+				bat 'echo "4"'
+				withAnt(installation: 'Ant') {
+				bat 'echo "5"'
+					bat "ant importprops"
+					bat 'echo "6"'
+					bat "%WORKSPACE%\\scripts\\utils\\prpcServiceUtils.bat import --connPropFile %WORKSPACE%\\scripts\\utils\\%SystemName%_import.properties --artifactsDir %WORKSPACE%"
+					bat 'echo "7"'
+                           
+			      }
 		}
 
 
