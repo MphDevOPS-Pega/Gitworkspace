@@ -78,7 +78,7 @@ pipeline {
 						responseHandle: 'NONE', 
 						url: "<serverurl>:<port>/prweb/PRRestService/PegaUnit/Rule-Test-Unit-Case/pzExecuteTests?TestSuiteID=${test_suite_id}"
 						
-						junit '**/*.xml'
+						junit '**.xml'
 						
 						//Abort the build if the Unit Test Suite Fails
 						if(currentBuild.result != null){
