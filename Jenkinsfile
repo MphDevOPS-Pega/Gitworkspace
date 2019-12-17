@@ -6,7 +6,7 @@ pipeline {
 	//Parameters Required at the start of the Build
 	parameters {
 		string(defaultValue: 'Name of the Branch', 
-			description: '', 
+			description: 'pega rule branch', 
 			name: 'branch_name')
 		
 		string(defaultValue: 'pxInsName of Test Suite', 
