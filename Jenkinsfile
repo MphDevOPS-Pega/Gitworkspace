@@ -127,6 +127,7 @@ pipeline {
 			}
 		}
 	}
+}
 
 
 	/*post {
@@ -140,4 +141,4 @@ $DEFAULT_CONTENT''',
 		}
 		//Sending Email at the end of the build
 	} */
-}
+
