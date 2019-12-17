@@ -57,8 +57,8 @@ pipeline {
 						sh "cat branch-${branch_name}.txt"
 					}
 				}
-			} */
-		}
+			} 
+		}*/
 
 		
 		/*Stage 2: Automated Unit Testing:
@@ -129,7 +129,6 @@ pipeline {
 	}
 
 
-
 	/*post {
 		always {
 			emailext attachmentsPattern: "unitTest${BUILD_TAG}.xml", 
@@ -141,4 +140,6 @@ $DEFAULT_CONTENT''',
 		}
 		//Sending Email at the end of the build
 	} */
+
+}
 
