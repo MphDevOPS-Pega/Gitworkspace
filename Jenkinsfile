@@ -129,7 +129,7 @@ pipeline {
 	}
 
 
-	post {
+	/*post {
 		always {
 			emailext attachmentsPattern: "unitTest${BUILD_TAG}.xml", 
 				body: '''Product: $productName $productVersion, Branch: $branch_name
@@ -139,5 +139,5 @@ $DEFAULT_CONTENT''',
 				to: 'anil.taduri@mphasis.com'
 		}
 		//Sending Email at the end of the build
-	}
+	} */
 }
