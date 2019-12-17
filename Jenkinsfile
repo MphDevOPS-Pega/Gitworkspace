@@ -38,8 +38,22 @@ pipeline {
 
 		stage('Deploy to L2') {
 			steps {
+                           load "${WORKSPACE}/loadprop.properties"
 				
-				load "${WORKSPACE}/loadprop.properties"
+				sh 'rm -rf ${WORKSPACE}/tmp'
+				sh 'mkdir ${WORKSPACE}/tmp'
+				sh "cp ${WORKSPACE}/scripts/samples/jenkins/Jenkins-build.xml ${WORKSPACE}/build.xml"
+				
+				withAnt(installation: 'Ant_1.10', jdk: 'JAVA_8') {
+					sh "ant exportprops"
+					sh "${WORKSPACE}/scripts/utils/prpcServiceUtils.sh export --connPropFile ${WORKSPACE}/scripts/utils/${SystemName}_export.properties --artifactsDir $WORKSPACE"
+				}
+				withAnt(installation: 'Ant_1.10', jdk: 'JAVA_8') {
+					sh "ant importprops"
+					sh "${WORKSPACE}/scripts/utils/prpcServiceUtils.sh import --connPropFile ${WORKSPACE}/scripts/utils/${SystemName}_import.properties --artifactsDir $WORKSPACE"
+				}
+				
+				
 				
 				
 			}
