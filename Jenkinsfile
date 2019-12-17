@@ -134,9 +134,9 @@ pipeline {
 			emailext attachmentsPattern: "unitTest${BUILD_TAG}.xml", 
 				body: '''Product: $productName $productVersion, Branch: $branch_name
 $DEFAULT_CONTENT''', 
-				replyTo: '<EMAIL>", 
+				replyTo: 'nagaraju.b@mphasis.com', 
 				subject: '$DEFAULT_SUBJECT', 
-				to: '<EMAIL>'
+				to: 'anil.taduri@mphasis.com'
 		}
 		//Sending Email at the end of the build
 	}
