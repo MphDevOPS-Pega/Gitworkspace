@@ -32,9 +32,13 @@ pipeline {
 
 	//Stages of Pipeline
 	stages {
-		
-		
-
+		stage ('Stage1'){
+	        steps {
+	            script{
+	                bat label: '', script: 'echo "00"'
+	                   }
+	              }
+	                         }
 
 		stage('Deploy to L2') {
 			steps {
