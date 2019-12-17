@@ -33,7 +33,7 @@ pipeline {
 	//Stages of Pipeline
 	stages {
 
-		stage ('Cleanup'){
+		/*stage ('Cleanup'){
 			steps {
 				//cleanWs notFailBuild: true
 			}
@@ -46,7 +46,7 @@ pipeline {
 			}
 		}
 		//Review the Branch. The branch must be present in the server.
-		/*stage('BranchReview') {
+		stage('BranchReview') {
 			steps {
 				script {
 					if (env.branch_name){
