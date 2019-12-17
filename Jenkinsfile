@@ -35,7 +35,7 @@ pipeline {
 
 		stage ('Cleanup'){
 			steps {
-				cleanWs notFailBuild: true
+				//cleanWs notFailBuild: true
 			}
 		}
 
