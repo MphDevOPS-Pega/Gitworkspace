@@ -13,7 +13,7 @@ pipeline {
 			description: 'Please enter the pxInsName of the Test Suite.', 
 			name: 'test_suite_id')
 		
-		string(defaultValue: '', 
+		string(defaultValue: 'CICDSourceProduct1', 
 			description: 'The name of the RAP used to generate the archive.', 
 			name: 'productName')
 		
