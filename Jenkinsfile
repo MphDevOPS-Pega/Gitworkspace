@@ -51,7 +51,7 @@ environment
 				bat 'echo "0"'
 				bat 'del %WORKSPACE%\\tmp /s /f /q'
 				bat 'echo "1"'
-				bat 'mkdir %WORKSPACE%\\tmp'
+				//bat 'mkdir %WORKSPACE%\\tmp'
 				bat 'echo "2"'
 				bat "copy %WORKSPACE%\\scripts\\samples\\jenkins\\Jenkins-build.xml %WORKSPACE%\\build.xml"
 				bat 'echo "3"'
