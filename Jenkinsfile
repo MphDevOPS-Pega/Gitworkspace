@@ -29,7 +29,11 @@ pipeline {
 			description: 'URL of Target Host', 
 			name: 'TargetHost')		
 	}
-
+environment
+	{
+		PATH="C:\\WINDOWS\\SYSTEM32"
+	}
+		
 	//Stages of Pipeline
 	stages {
 		stage ('Stage1'){
