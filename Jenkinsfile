@@ -58,7 +58,7 @@ environment
 				withAnt(installation: 'Ant') {
 					bat "ant exportprops"
 					bat '''cd %WORKSPACE%\\scripts\\utils\\
-					prpcServiceUtils.bat export --connPropFile %WORKSPACE%\\scripts\\utils\\%SystemName%_export.properties --artifactsDir %WORKSPACE%'''
+					prpcServiceUtils.bat export --connPropFile %SystemName%_export.properties --artifactsDir %WORKSPACE%'''
 				}
 				bat 'echo "4"'
 				withAnt(installation: 'Ant') {
