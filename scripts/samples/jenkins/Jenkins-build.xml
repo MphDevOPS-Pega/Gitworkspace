@@ -1,17 +1,17 @@
 <project name="ExportImport" basedir="." default="exportprops">
     <target name="exportprops" >
 		<property environment="env" />
-		<delete file="${env.PEGA_HOME}\scripts\utils\${env.SystemName}_export.properties"/>
-        <propertyfile file="${env.PEGA_HOME}\scripts\utils\${env.SystemName}_export.properties">
+		<delete file="${env.WORKSPACE}\scripts\utils\${env.SystemName}_export.properties"/>
+        <propertyfile file="${env.WORKSPACE}\scripts\utils\${env.SystemName}_export.properties">
 			<entry  key="${env.SystemName}.pega.rest.server.url" value="${env.SourceHost}/prweb/PRRestService/"/>
 <!--			<entry  key="pega.rest.server.url" value="${env.SourceHost}/prweb/PRRestService/"/> -->
 			<entry  key="${env.SystemName}.pega.rest.username" value="${env.SourceUser}"/>
 			<entry  key="${env.SystemName}.pega.rest.password" value="${env.SourcePassword}"/>
-            <entry  key="${env.SystemName}.export.archiveName" value="${productName}${productVersion}"/>
-            <entry  key="${env.SystemName}.export.productName" value="${productName}"/>
-            <entry  key="${env.SystemName}.export.productVersion" value="${productVersion}"/>
-			<entry  key="${env.SystemName}.export.applicationName" value="${applicationName}"/>
-            <entry  key="${env.SystemName}.export.applicationVersion" value="${applicationVersion}"/>
+            <entry  key="${env.SystemName}.export.archiveName" value="${env.productName}${env.productVersion}"/>
+            <entry  key="${env.SystemName}.export.productName" value="${env.productName}"/>
+            <entry  key="${env.SystemName}.export.productVersion" value="${env.productVersion}"/>
+			<entry  key="${env.SystemName}.export.applicationName" value="${env.applicationName}"/>
+            <entry  key="${env.SystemName}.export.applicationVersion" value="${env.applicationVersion}"/>
             <entry  key="${env.SystemName}.export.async" value="false"/>
         </propertyfile>
     </target>
