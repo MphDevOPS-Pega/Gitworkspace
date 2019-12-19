@@ -53,7 +53,7 @@ environment
 				bat 'echo "1"'
 				//bat 'mkdir %WORKSPACE%\\tmp'
 				bat 'echo "2"'
-				bat "copy %WORKSPACE%\\scripts\\samples\\jenkins\\build.xml %WORKSPACE%"
+				//bat "copy %WORKSPACE%\\scripts\\samples\\jenkins\\build.xml %WORKSPACE%"
 				bat 'echo "3"'
 				withAnt(installation: 'Ant') {
 					bat "ant exportprops"
