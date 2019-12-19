@@ -49,7 +49,7 @@ environment
 				bat label: '', script: 'echo "00"'
 				load "loadprop.properties"
 				bat 'echo "0"'
-				bat 'del %WORKSPACE%\\tmp /s /f /q'
+				//bat 'del %WORKSPACE%\\tmp /s /f /q'
 				bat 'echo "1"'
 				//bat 'mkdir %WORKSPACE%\\tmp'
 				bat 'echo "2"'
